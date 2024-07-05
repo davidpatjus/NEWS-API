@@ -1,15 +1,18 @@
 API de Noticias
+
 API para interactuar con un proveedor de noticias y obtener información actualizada sobre artículos y eventos destacados.
 
 Endpoints Disponibles
+
+
 Obtener Artículos
 Recupera una lista de artículos de noticias.
 
-URL
 
-bash
-Copy code
+URL
 GET /api/articles
+
+
 Parámetros de Consulta
 
 query (string): Término de búsqueda para filtrar artículos.
@@ -20,18 +23,13 @@ pageSize (int): Número de artículos por página. Por defecto, 10.
 fromDate (string): Fecha de inicio (YYYY-MM-DD).
 toDate (string): Fecha de finalización (YYYY-MM-DD).
 country (string): País de origen.
+
 Ejemplo de Uso
 
-bash
-Copy code
 GET /api/articles?query=bitcoin&category=technology&pageSize=5
 Obtener Eventos Destacados
 Recupera eventos de última hora.
 
-URL
-
-bash
-Copy code
 GET /api/breaking-events
 Parámetros de Consulta
 
@@ -42,34 +40,22 @@ page (int): Número de página. Por defecto, 1.
 pageSize (int): Número de eventos por página. Por defecto, 10.
 Ejemplo de Uso
 
-bash
-Copy code
 GET /api/breaking-events?category=politics&pageSize=3
 Obtener Detalles de un Artículo por ID
 Obtiene los detalles completos de un artículo específico.
 
-URL
-
-bash
-Copy code
 GET /api/articles/:id
 Ejemplo de Uso
 
-bash
-Copy code
 GET /api/articles/12345
 Estado de la API
 Verifica el estado de la API.
 
 URL
 
-bash
-Copy code
 GET /api/health
 Respuesta
 
-json
-Copy code
 {
   "status": "API is running",
   "newsAPIConnection": "OK"
