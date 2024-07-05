@@ -1,32 +1,32 @@
-Documentación de API para Noticias
-Bienvenido a la documentación de la API para interactuar con nuestro proveedor de noticias. Esta API te permite acceder a artículos, eventos destacados y detalles específicos de artículos por ID.
+API de Noticias
+API para interactuar con un proveedor de noticias y obtener información actualizada sobre artículos y eventos destacados.
 
 Endpoints Disponibles
 Obtener Artículos
-Recupera una lista de artículos de noticias basados en los parámetros de búsqueda y filtrado proporcionados.
+Recupera una lista de artículos de noticias.
 
 URL
 
 bash
 Copy code
 GET /api/articles
-Parámetros de Consulta (Query Parameters)
+Parámetros de Consulta
 
-query (string): Término de búsqueda para filtrar artículos por palabra clave.
-category (string): Categoría de noticias para filtrar (ejemplo: technology, sports).
+query (string): Término de búsqueda para filtrar artículos.
+category (string): Categoría de noticias (ejemplo: technology, sports).
 language (string): Código de idioma (ISO 639-1). Por defecto, en.
-page (int): Número de página para la paginación. Por defecto, 1.
+page (int): Número de página. Por defecto, 1.
 pageSize (int): Número de artículos por página. Por defecto, 10.
-fromDate (string): Fecha de inicio para filtrar artículos (YYYY-MM-DD).
-toDate (string): Fecha de finalización para filtrar artículos (YYYY-MM-DD).
-country (string): País para filtrar artículos por país de origen.
+fromDate (string): Fecha de inicio (YYYY-MM-DD).
+toDate (string): Fecha de finalización (YYYY-MM-DD).
+country (string): País de origen.
 Ejemplo de Uso
 
 bash
 Copy code
 GET /api/articles?query=bitcoin&category=technology&pageSize=5
-Obtener Eventos Destacados (Breaking Events)
-Recupera una lista de eventos de última hora basados en los parámetros de búsqueda y filtrado proporcionados.
+Obtener Eventos Destacados
+Recupera eventos de última hora.
 
 URL
 
@@ -35,10 +35,10 @@ Copy code
 GET /api/breaking-events
 Parámetros de Consulta
 
+category (string): Categoría de eventos (ejemplo: politics, health).
 language (string): Código de idioma (ISO 639-1). Por defecto, en.
-region (string): Región geográfica para filtrar eventos.
-category (string): Categoría de eventos para filtrar (ejemplo: politics, health).
-page (int): Número de página para la paginación. Por defecto, 1.
+region (string): Región geográfica.
+page (int): Número de página. Por defecto, 1.
 pageSize (int): Número de eventos por página. Por defecto, 10.
 Ejemplo de Uso
 
@@ -46,23 +46,20 @@ bash
 Copy code
 GET /api/breaking-events?category=politics&pageSize=3
 Obtener Detalles de un Artículo por ID
-Obtiene los detalles completos de un artículo específico utilizando su identificador único.
+Obtiene los detalles completos de un artículo específico.
 
 URL
 
 bash
 Copy code
 GET /api/articles/:id
-Parámetros de Ruta (Path Parameter)
-
-id (string): Identificador único del artículo.
 Ejemplo de Uso
 
 bash
 Copy code
 GET /api/articles/12345
 Estado de la API
-Verifica el estado de la API para asegurarse de que esté en funcionamiento.
+Verifica el estado de la API.
 
 URL
 
